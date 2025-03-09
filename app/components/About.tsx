@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
+// import { Phone, Mail, MapPin } from "lucide-react"
 
 export default function About() {
   return (
