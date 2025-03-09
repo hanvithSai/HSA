@@ -63,7 +63,7 @@ export default function Footer() {
               Get a copy of my resume to learn more about my skills and experience.
             </p>
             <a
-              href="/H_CV_JPMC_March_2025 (18).pdf" target="_blank"
+              href="/H_CV_JPMC_March_2025.pdf" target="_blank"
               className="flex items-center gap-2 bg-primary-light dark:bg-primary-dark text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
             >
               <Download className="w-4 h-4" />
