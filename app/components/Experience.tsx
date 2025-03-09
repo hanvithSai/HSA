@@ -2,9 +2,20 @@
 
 import { motion } from "framer-motion"
 import { Briefcase, Info, X } from "lucide-react"
-import { useState } from "react"
+import { useState, ReactNode } from "react"
 
-const experiences = [
+// Define the interface for experience objects
+interface Experience {
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  responsibilities: string[];
+  icon: ReactNode;
+  side: "left" | "right";
+}
+
+const experiences: Experience[] = [
   {
     title: "Software Engineering Intern",
     company: "ByteCounsel Pvt LTD",
@@ -32,10 +43,10 @@ const experiences = [
 ]
 
 export default function Experience() {
-  const [selectedExp, setSelectedExp] = useState(null);
+  const [selectedExp, setSelectedExp] = useState<Experience | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (exp) => {
+  const openModal = (exp: Experience) => {
     setSelectedExp(exp);
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
