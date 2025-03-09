@@ -28,14 +28,16 @@ export default function RootLayout({
       </head>
       <body className="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
-          <main className="pt-20">{children}</main>
-          <Footer />
-          <ScrollToTopButton />
+          {mounted && (
+            <>
+              <Header />
+              <main className="pt-20">{children}</main>
+              <Footer />
+              <ScrollToTopButton />
+            </>
+          )}
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-

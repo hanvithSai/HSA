@@ -1,11 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useTheme } from "next-themes"
+// import { useTheme } from "next-themes"
 import { ArrowDown } from "lucide-react"
 
 export default function Hero() {
-  const { theme } = useTheme()
+  // const { theme } = useTheme()
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">

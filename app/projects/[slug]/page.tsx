@@ -1,6 +1,6 @@
 "use client"
 
-import { useParams, useRouter } from "next/navigation"
+import { useParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -79,17 +79,17 @@ const projects = [
     ],
     images: ["/placeholder.svg?height=300&width=400", "/placeholder.svg?height=300&width=400"],
   },
-]
+];
 
 export default function ProjectPage() {
-  const params = useParams()
-  const router = useRouter()
-  const project = projects.find((p) => p.slug === params.slug)
+  const params = useParams();
+  const slug = params?.slug;
+  const project = projects.find((p) => p.slug === slug);
 
   useEffect(() => {
     // Scroll to top when component mounts
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return (
@@ -105,7 +105,7 @@ export default function ProjectPage() {
           </Link>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -180,6 +180,5 @@ export default function ProjectPage() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-

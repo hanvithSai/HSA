@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { Briefcase, Info, X } from "lucide-react"
 import { useState } from "react"
-import Image from "next/image"
 
 const experiences = [
   {
@@ -11,7 +10,6 @@ const experiences = [
     company: "ByteCounsel Pvt LTD",
     period: "DEC 2024 - MAR 2025",
     location: "Remote",
-    // logo: "/logos/bytecounsel-logo.png", // Add your logo path here
     responsibilities: [
       "Developed a high-performance landing page using Next.js, ShadCN UI, and Tailwind CSS, improving the UI responsiveness and usability: Gaveled, which is hosted on AWS for reliable performance and availability."
     ],
@@ -23,7 +21,6 @@ const experiences = [
     company: "Swecha AI",
     period: "MAY 2024 - JUL 2024",
     location: "Work From Home",
-    // logo: "/logos/swecha-logo.png", // Add your logo path here
     responsibilities: [
       "Assisted in curating diverse datasets for a Telugu linguistic LLM, improving model adaptability to different accents.",
       "Worked on AI-driven natural language processing using TensorFlow and Python.",
@@ -87,7 +84,7 @@ export default function Experience() {
                 <div 
                   className={`w-5/12 ${exp.side === "left" ? "text-right pr-8" : "pl-8"} group`}
                 >
-                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer max-w-full" onClick={() => openModal(exp)}>
+                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer" onClick={() => openModal(exp)}>
                     <h3 className="text-xl font-bold text-text-light dark:text-text-dark break-words">
                       {exp.title}
                     </h3>

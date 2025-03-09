@@ -1,12 +1,9 @@
 "use client"
 
-import { useTheme } from "next-themes"
 import Link from "next/link"
 import { Github, Linkedin, Twitter, Mail, Download } from "lucide-react"
 
 export default function Footer() {
-  const { theme } = useTheme()
-
   const socialLinks = [
     {
       name: "GitHub",
@@ -76,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-text-light/10 dark:border-text-dark/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-text-light/60 dark:text-text-dark/60 text-sm mb-4 md:mb-0">
+          <p className="text-text-light/60 dark:text-text-dark/60 text-sm">
             © {new Date().getFullYear()} Hanvith Sai Alla. All rights reserved.
           </p>
         </div>
@@ -84,4 +81,3 @@ export default function Footer() {
     </footer>
   )
 }
-
