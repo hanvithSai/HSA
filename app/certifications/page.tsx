@@ -33,7 +33,7 @@ const certificates: Certificate[] = [
     issuer: "Certificate of Appreciation for PowerBI and Data Analytics",
     date: "2024-05-20",
     image: "/placeholder.svg?height=400&width=800",
-    certificateFile: "/certificates/iste-powerbi.jpg",
+    certificateFile: "/Data_Analytics_(Power BI)_Certificate.pdf",
     description:
       "Received recognition for outstanding contributions to data analytics projects using PowerBI. Demonstrated proficiency in creating interactive dashboards, data modeling, and extracting actionable insights from complex datasets.",
   },
@@ -43,7 +43,7 @@ const certificates: Certificate[] = [
     issuer: "Cyber Suraksha by Tata Strive and Microsoft",
     date: "2024-03-10",
     image: "/placeholder.svg?height=400&width=800",
-    certificateFile: "/certificates/cyber-security.pdf",
+    certificateFile: "/CyberSecurity_Certificate.pdf",
     description:
       "Completed a comprehensive 48-hour course covering fundamental concepts of cybersecurity, including network security, encryption, threat detection, and best practices for securing digital assets and information systems.",
   },
@@ -53,7 +53,7 @@ const certificates: Certificate[] = [
     issuer: "GDSC (VNRVJIET)",
     date: "2023-11-05",
     image: "/placeholder.svg?height=400&width=800",
-    certificateFile: "/certificates/solution-challenge.png",
+    certificateFile: "/GDSC_Hackathon.jpg",
     description:
       "Participated in a hackathon focused on developing innovative solutions to real-world problems. Collaborated with a team to design and implement a prototype addressing sustainability challenges.",
   },
@@ -63,7 +63,7 @@ const certificates: Certificate[] = [
     issuer: "7 Day Bootcamp on Python and ML by Google Developer Student Club",
     date: "2023-09-22",
     image: "/placeholder.svg?height=400&width=800",
-    certificateFile: "/certificates/ml-basics.pdf",
+    certificateFile: "/Python_ML_GDSC.pdf",
     description:
       "Completed an intensive 7-day bootcamp covering Python programming fundamentals and machine learning concepts. Gained hands-on experience with popular ML libraries and implemented basic predictive models.",
   },
@@ -73,14 +73,34 @@ const certificates: Certificate[] = [
     issuer: "Great Learning",
     date: "2023-07-18",
     image: "/placeholder.svg?height=400&width=800",
-    certificateFile: "/certificates/uiux-beginners.pdf",
+    certificateFile: "/UI_UX_Design_Great_Learning.jpg",
     description:
       "Learned the fundamentals of user interface and user experience design. Covered topics including design principles, wireframing, prototyping, and user research methodologies for creating intuitive and engaging digital experiences.",
   },
   {
     id: 7,
-    title: "Scaler",
-    issuer: "Python, C++, SQL",
+    title: "Python",
+    issuer: "ScalerC++, SQL",
+    date: "2023-05-30",
+    image: "/placeholder.svg?height=400&width=800",
+    certificateFile: "/certificates/scaler-programming.pdf",
+    description:
+      "Completed comprehensive courses in Python, C++, and SQL programming languages. Developed proficiency in core programming concepts, data structures, algorithms, and database management techniques.",
+  },
+  {
+    id: 8,
+    title: "C++",
+    issuer: "Scaler",
+    date: "2023-05-30",
+    image: "/placeholder.svg?height=400&width=800",
+    certificateFile: "/certificates/scaler-programming.pdf",
+    description:
+      "Completed comprehensive courses in Python, C++, and SQL programming languages. Developed proficiency in core programming concepts, data structures, algorithms, and database management techniques.",
+  },
+  {
+    id: 9,
+    title: "SQL",
+    issuer: "Scaler",
     date: "2023-05-30",
     image: "/placeholder.svg?height=400&width=800",
     certificateFile: "/certificates/scaler-programming.pdf",
