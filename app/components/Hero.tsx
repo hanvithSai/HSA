@@ -58,7 +58,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-2xl md:text-3xl mb-8 text-text-light dark:text-text-dark"
         >
-          Full Stack Developer & AI Enthusiast
+          Software Engineer | AI Enthusiast | Aspiring Product Manger
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
