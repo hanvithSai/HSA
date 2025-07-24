@@ -37,7 +37,7 @@ export default function Footer() {
               Hanvith Sai Alla
             </Link>
             <p className="text-text-light/70 dark:text-text-dark/70 text-center md:text-left mb-6">
-              Full Stack Developer & AI Enthusiast passionate about building innovative solutions and continuous
+              Full Stack Developer, AI Enthusiast and Aspiring Product Manager passionate about building innovative solutions and continuous
               learning.
             </p>
             <div className="flex space-x-4">
@@ -63,7 +63,7 @@ export default function Footer() {
               Get a copy of my resume to learn more about my skills and experience.
             </p>
             <a
-              href="/H_CV_JPMC_March_2025.pdf" target="_blank"
+              href="/H_CV_June_2025.pdf" target="_blank"
               className="flex items-center gap-2 bg-primary-light dark:bg-primary-dark text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
             >
               <Download className="w-4 h-4" />
