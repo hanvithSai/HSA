@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hanvith Sai Alla
 
-## Getting Started
+> Aspiring Product Manager | SWE | AI Enthusiast  
+> Bridging Technology, Strategy, and User-Centric Innovation  
 
-First, run the development server:
+[🌐 Portfolio](https://hanvithsaia-portfolio.vercel.app) • [GitHub](https://github.com/hanvithSai) • [LinkedIn](https://www.linkedin.com/in/hanvith-sai-alla-0ab154295/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About Me
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I'm Hanvith, a Computer Science undergrad with a strong foundation in software engineering and AI/ML, now transitioning into Product Management. I’m passionate about turning complex problems into scalable, user-focused solutions—leveraging both my technical expertise and a growing product mindset.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+My journey spans:
+- **Software Engineering**: Full-stack web applications, DevOps, System Design
+- **AI Exploration**: LLMs, AI Agents, NLP
+- **Product Management**: Strategic planning, user research, roadmapping, stakeholder collaboration
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 💼 Experience Highlights
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 💻 SWE Intern @ ByteCounsel (Gaveled.in)
+**Dec 2024 – Mar 2025**  
+- Built a responsive SEO-optimized landing page (Next.js, Tailwind, TypeScript).
+- Worked on an AI agent for test automation in CI/CD pipelines.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Projects
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### [AI-Based Lyrics Generator](https://github.com/hanvithSai/ALG.git)
+- Gradio + OpenAI-powered tool for multilingual lyric creation.
+- Designed for musicians and lyricists with real-time suggestions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### [Suma – Audience Engagement Platform](https://github.com/hanvithSai/suma.git)
+- Real-time event interaction system using Next.js, MongoDB, Tailwind.
+- Integrated Google OAuth and analytics dashboard for engagement insights.
+
+---
+
+## Skills Snapshot
+
+| Product Strategy       | Frontend Development     | Backend & Tools           | Data & AI                   |
+|------------------------|--------------------------|----------------------------|-----------------------------|
+| Roadmapping            | React.js · Next.js       | Node.js · Express.js       | Python · Power BI · Excel   |
+| Agile Methodologies    | Tailwind CSS · TypeScript| Git · Docker · Jupyter     | AI/ML · LLMs · NLP          |
+| Stakeholder Management | HTML5 · CSS3             | SQL · MongoDB              | Gradio · OpenAI APIs        |
+
+---
+
+## 🏅 Certifications & Recognition
+- 🥈 2nd Place – VIVITSU’25 Hackathon (LegalTech)
+- 📊 ISTE’s Project Infinity – Power BI & Analytics
+- 🧠 Product Management Workshop – Jobaaj Learnings
+- 🛡️ Cybersecurity Basics – Tata Strive + Microsoft
+
+---
+
+## Community & Interests
+
+- **Model United Nations (MUN)**: Delegate & International Press, covering diplomacy and global issues  
+- **Turing Hut**: Ranked Top 9% in CP contest; active problem-solving contributor  
+- **EDC & VJ Community**: Leading AI-based initiatives and startup innovation projects  
+- **Clubs**: Member of Literature, Short Film, and CSI technical chapters  
+
+---
+
+## 📫 Contact
+
+- **Email**: hanvithsai.a@gmail.com  
+- **Portfolio**: [hanvithsaia-portfolio.vercel.app](https://hanvithsaia-portfolio.vercel.app)  
+
+---
