@@ -65,9 +65,8 @@ export default function About() {
           </h3>
           <p className="text-lg text-text-light/80 dark:text-text-dark/80 leading-relaxed">
             As a versatile and adaptable individual, I am deeply passionate about technology and thrive on tackling
-            diverse challenges. Committed to continuous learning and growth, I focus on full-stack development, AI, and
-            machine learning. I am eager to contribute to collaborative and innovative environments, leveraging my
-            skills to foster diverse perspectives and drive growth and breakthroughs through impactful projects.
+            diverse challenges. Committed to continuous learning and growth, I was focused on full-stack development (MERN), AI/ML and now transitioning to Product Management. I am eager to contribute to collaborative and innovative environments, leveraging my
+            skills to foster diverse perspectives and drive growth and breakthroughs. 
           </p>
         </motion.div>
       </div>
