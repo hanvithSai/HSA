@@ -7,7 +7,7 @@ const skillCategories = [
   {
     category: "Programming Languages",
     icon: <Code className="w-6 h-6" />,
-    skills: ["Python", "R", "JavaScript", "TypeScript", "C++", "SQL"],
+    skills: ["Python", "JavaScript", "TypeScript", "SQL"],
   },
   {
     category: "Frameworks",
@@ -17,22 +17,22 @@ const skillCategories = [
   {
     category: "Databases",
     icon: <Database className="w-6 h-6" />,
-    skills: ["MongoDB", "MySQL", "Oracle SQL", "PostgreSQL"],
+    skills: ["MongoDB", "MySQL", "Oracle SQL"],
   },
   {
     category: "Tools",
     icon: <GitBranch className="w-6 h-6" />,
-    skills: ["Git", "GitHub", "Jupyter Notebook", "Vercel", "Render", "Latex", "Power BI", "Canva"],
+    skills: ["Git", "GitHub", "Jupyter Notebook", "Vercel", "Render", "Power BI", "Canva"],
   },
   {
     category: "Cloud & DevOps",
     icon: <Server className="w-6 h-6" />,
-    skills: ["AWS", "Vercel", "Render"],
+    skills: ["AWS", "GCP"],
   },
   {
     category: "AI & ML",
     icon: <Brain className="w-6 h-6" />,
-    skills: ["Deep Learning", "Reinforcement Learning", "NLP"],
+    skills: ["Deep Learning", "Reinforcement Learning", "NLP", "LLMs"],
   },
   {
     category: "Soft Skills",
