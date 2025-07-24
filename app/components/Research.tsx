@@ -34,7 +34,12 @@ export default function Research() {
               <p className="text-primary-light dark:text-primary-dark mt-2">
                 Presented at the International Conference on Computational Mathematics and Applications (ICCMA 2025)
               </p>
-              <p className="text-text-light/80 dark:text-text-dark/80 mt-1">NIT Silchar - January 16 - 18, 2025</p>
+              <p className="text-text-light/80 dark:text-text-dark/80 mt-1">
+                NIT Silchar - January 16 - 18, 2025
+              </p>
+              <p className="text-text-light dark:text-text-dark mt-4">
+                The paper explores the application of Deep Q-Networks in reinforcement learning, comparing their performance with Monte Carlo methods in both simple and complex environments using Gazebo simulations. This experience gave me hands-on exposure in machine learning and empirical evaluation in AI research.
+              </p>
             </div>
           </div>
         </motion.div>
@@ -42,4 +47,3 @@ export default function Research() {
     </section>
   )
 }
-
