@@ -7,7 +7,7 @@ const profiles = [
   {
     platform: "Codeforces",
     username: "Hanvith",
-    rating: "Rating: 771",
+    rating: "Rating: 888",
     link: "https://codeforces.com/profile/Hanvith",
   },
   {
