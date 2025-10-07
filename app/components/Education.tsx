@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { GraduationCap, BookOpen, School } from "lucide-react"
+import { GraduationCap, BookOpen, School, Database } from "lucide-react"
 
 const education = [
   {
@@ -10,6 +10,13 @@ const education = [
     period: "2023 - 2027",
     grade: "CGPA: 8.5 (Pursuing)",
     icon: <GraduationCap className="w-6 h-6" />,
+  },
+  {
+    degree: "AWS Business Intelligence Engineer Nanodegree",
+    institution: "Udacity",
+    period: "2025",
+    grade: "Future Enrollment",
+    icon: <Database className="w-6 h-6" />,
   },
   {
     degree: "Intermediate, TSBIE",
@@ -68,4 +75,3 @@ export default function Education() {
     </section>
   )
 }
-
