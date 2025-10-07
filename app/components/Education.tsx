@@ -15,7 +15,7 @@ const education = [
     degree: "AWS Business Intelligence Engineer Nanodegree",
     institution: "Udacity",
     period: "2025",
-    grade: "Pursuing",
+    grade: "",
     icon: <Database className="w-6 h-6" />,
   },
   {
