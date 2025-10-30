@@ -14,10 +14,39 @@ interface Experience {
   icon: ReactNode;
   side: "left" | "right";
   url?: string; // Optional URL for the company
+  project?: {
+    name: string;
+    overview: string;
+    keyPoints: string[]; // condensed project details / roadmap / outcomes
+  };
 }
 
 const experiences: Experience[] = [
     {
+    title: "AI Intern",
+    company: "Infosys Springboard",
+    period: "OCT 2025 - NOV 2025",
+    location: "Remote",
+    responsibilities: [
+      "Contributed to TraceFinder — a forensic scanner identification project focused on extracting scanner-specific artifacts and training classifiers to identify source scanners.",
+      "Implemented preprocessing and feature extraction pipelines, experimented with FFT/Wavelet features and PRNU, and evaluated model performance with confusion matrices and explainability tools.",
+    ],
+    icon: <Briefcase className="w-6 h-6" />,
+    side: "left",
+    project: {
+      name: "TraceFinder — Forensic Scanner Identification",
+      overview:
+        "Identify the source scanner used to scan a document/image by learning scanner-specific noise and artifact patterns for use in digital forensics, document authentication, and legal evidence verification.",
+      keyPoints: [
+        "Project goal: extract scanner-specific features (noise patterns, FFT/PRNU, texture descriptors) and train classifiers (CNN / RF / SVM) to distinguish multiple scanners.",
+        "Use cases include Digital Forensics, Document Authentication, and Legal Evidence Verification.",
+        "Roadmap: data collection & preprocessing → feature engineering & baseline models → CNN & explainability → simple UI deployment (Streamlit).",
+        "Expected outcome: model distinguishing 3–5 scanners with visualizations (confusion matrix, SHAP/Grad-CAM), and optional upload UI returning predicted scanner with confidence.",
+        "Dataset: Kaggle + optional manually collected scans; evaluation focused on accuracy, precision, recall, F1, and robustness.",
+      ],
+    },
+  },
+  {
     title: "Business Development Intern",
     company: "Australian Institute of Advanced Technologies",
     period: "JUL 2025 - OCT 2025",
@@ -41,6 +70,7 @@ const experiences: Experience[] = [
     icon: <Briefcase className="w-6 h-6" />,
     side: "left",
   },
+
 
 ];
 
@@ -286,6 +316,28 @@ export default function Experience() {
                   ))}
                 </ul>
               </div>
+
+              {/* Project details (if present) */}
+              {selectedExp.project && (
+                <div className="mt-6">
+                  <h4 className="font-semibold mb-2 text-text-light dark:text-text-dark text-lg">
+                    Project: {selectedExp.project.name}
+                  </h4>
+                  <p className="text-text-light/90 dark:text-text-dark/90 mb-3">
+                    {selectedExp.project.overview}
+                  </p>
+                  <ul className="list-inside list-disc space-y-2">
+                    {selectedExp.project.keyPoints.map((kp, i) => (
+                      <li
+                        key={i}
+                        className="text-text-light/90 dark:text-text-dark/90"
+                      >
+                        {kp}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
             <div className="p-4 sm:p-6 border-t border-gray-200 dark:border-gray-700 text-right">
               <button
