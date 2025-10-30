@@ -17,20 +17,18 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
-  {
-    title: "Project Manager",
-    company: "Tutly",
-    period: "Present",
+    {
+    title: "Business Development Intern",
+    company: "Australian Institute of Advanced Technologies",
+    period: "JUL 2025 - OCT 2025",
     location: "Remote",
     responsibilities: [
-      "Coordinating a team of about 20 developers and designers.",
-      "Leading project planning, resource allocation, and timeline management.",
-      "Ensuring seamless communication and collaboration across team members.",
-      "Managing project delivery and maintaining quality standards.",
+      "Supervised end-to-end website development for AIAT India by coordinating developers and UI/UX designers, ensuring alignment with product vision and user needs, resulting in a 25% improvement in user engagement.",
+      "Designed and implemented an internal customer dashboard using data visualization tools to track 1,000+ customer records, enabling milestone-based performance assessments and improving retention by 18%.",
     ],
     icon: <Briefcase className="w-6 h-6" />,
     side: "right",
-    url: "https://tutly.in/",
+    url: "https://aiat.edu.au/",
   },
   {
     title: "Software Engineering Intern",
@@ -43,19 +41,7 @@ const experiences: Experience[] = [
     icon: <Briefcase className="w-6 h-6" />,
     side: "left",
   },
-  {
-    title: "Summer Intern",
-    company: "Swecha AI",
-    period: "MAY 2024 - JUL 2024",
-    location: "Work From Home",
-    responsibilities: [
-      "Assisted in curating diverse datasets for a Telugu linguistic LLM, improving model adaptability to different accents.",
-      "Worked on AI-driven natural language processing using TensorFlow and Python.",
-      "Collaborated with a team of developers and researchers to enhance AI-driven language models.",
-    ],
-    icon: <Briefcase className="w-6 h-6" />,
-    side: "right",
-  },
+
 ];
 
 export default function Experience() {
