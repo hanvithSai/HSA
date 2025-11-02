@@ -226,7 +226,7 @@ This multi-session workshop explores the development of agentic applications usi
     startDate: "5th September 2024",
     endDate: "15th September 2024",
     tools: ["C++", "DSA"],
-    image: "/certificates/Scaler's C++ Course.png",
+    image: "/certificates/Scaler's CPP Course.png",
   },
   {
     id: 17,
@@ -289,6 +289,30 @@ This multi-session workshop explores the development of agentic applications usi
     endDate: "30th June 2025",
     tools: ["Product Management", "Case Studies"],
     image: "/certificates/Summer of PM'25 Case Study.png",
+  },
+  {
+    id: 22,
+    host: "Google | Code Vipassana | Google Developer Groups : Cloud Kochi",
+    title:
+      "Accelerate data-driven agents and applications with Gemini CLI & Serverless Runtimes",
+    description: `Code Vipassana Season 11 focuses on accelerating data-driven and agentic application development using Gemini CLI and serverless runtimes. The series offers a comprehensive exploration of modern full-stack development practices, highlighting tools such as AlloyDB, Cloud Run, and the MCP Toolbox for Databases.
+Across multiple hands-on sessions, participants will learn to build and deploy applications serverlessly, configure secure MCP servers, and prepare multimodal data for analytics. It is aimed at advancing developer proficiency in scalable, intelligent system design.`,
+    experience: `And again another season of Code Vipassana, tried my best to keep up with live sessions, but unfortunately it did not happen. However the codelabs were thorough enough to get things done and I learnt a little.`,
+    startDate: "11th September 2025",
+    endDate: "25th September 2025",
+    tools: ["AI", "Gemini CLI", "MCP", "Serverless"],
+    image: "/certificates/Code Vippasana S11.jpeg",
+  },
+  {
+    id: 23,
+    host: "IBM | IBM SkillsBuild",
+    title: "Artificial Intelligence Fundamentals",
+    description: `A 10+ hour foundational course available in English, Arabic, Brazilian Portuguese, and Spanish, covering core AI concepts such as machine learning, deep learning, natural language processing, computer vision, chatbots, and neural networks. It also introduces AI ethics, practical applications, and model implementation using IBM Watson Studio, along with insights into career opportunities and essential skills in the AI domain.`,
+    experience: `Almost bored by reading through the same theory and basics of AI whilst already knowing and using it. However, it did help as a revision.`,
+    startDate: "3rd July 2025",
+    endDate: "23rd July 2025",
+    tools: ["AI", "ML", "DL"],
+    image: "/certificates/IBM AI Fundamentals.png",
   },
 ];
 
