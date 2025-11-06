@@ -7,18 +7,19 @@ const profiles = [
   {
     platform: "Codeforces",
     username: "Hanvith",
-    rating: "Rating: 888",
+    rating: "Rating: 1023",
     link: "https://codeforces.com/profile/Hanvith",
   },
   {
     platform: "CodeChef",
     username: "han3",
-    rating: "Rating: 1402",
+    rating: "Rating: 1441",
     link: "https://www.codechef.com/users/han3",
   },
   {
     platform: "Leetcode",
     username: "HanvithSaiAlla",
+    rating: "Rating: 1526",
     link: "https://leetcode.com/HanvithSaiAlla/",
   },
   {
