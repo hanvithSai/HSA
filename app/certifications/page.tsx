@@ -338,6 +338,17 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     image: "/certificates/MongoDB GFG.png",
   },
   {
+    id: 27,
+    host: "Oracle",
+    title: "Oracle Cloud Infrastructure 2025 AI Foundations Associate (1Z0-1122-25)",
+    description: `The OCI AI Foundations path introduces key concepts in AI, ML, Deep Learning, and Generative AI, focusing on their application within Oracle Cloud. No prior experience is required.`,
+    experience: `Just another brush up on AI. Good lessons and visuals. Was a little long than expected`,
+    startDate: "3rd August 2025",
+    endDate: "5th August 2025",
+    tools: ["OCI", "AI"],
+    image: "/certificates/OCI 2025 AI Foundations Associate.png",
+  },
+  {
     id: 26,
     host: "Oracle",
     title:
@@ -348,6 +359,17 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     endDate: "30th October 2025",
     tools: ["OCI", "AWS", "GCP"],
     image: "/certificates/OCI 2025 Multi Cloud Architect.png",
+  },
+  {
+    id: 28,
+    host: "Oracle",
+    title: "Oracle Cloud Infrastructure 2025 Foundations Associate (1Z0-1085-25)",
+    description: `A foundational learning path covering OCI architecture, identity and access management, networking, compute, storage, database, security, and cost management. Learners gain hands-on experience in deploying and managing OCI services while understanding best practices for scalability and security. Basic cloud computing knowledge is recommended. The course also prepares participants for the Oracle Cloud Infrastructure 2025 Foundations Associate certification.`,
+    experience: `Just another brush up on AI. Good lessons and visuals. Was a little long than expected`,
+    startDate: "19th August 2025",
+    endDate: "25th August 2025",
+    tools: ["OCI"],
+    image: "/certificates/OCI 2025 Foundations Associate.png",
   },
 ];
 
