@@ -34,7 +34,7 @@ This interactive workshop introduces participants to agentic AI systems using Ag
     experience: `They were a few technical glitches and all but it was nice building an AI agent hands-on right when everyone is hyping about AI agents. My prior experience with Salesforce AI with Agentforce Foundations course held me to understand things better and faster. It was pretty decent.`,
     startDate: "15th June 2025",
     tools: ["Salesforce Agentforce", "Python", "AI", "AI Agents"],
-    image: "/certificates/AI Agent Salesforce GFG.png",
+    image: "/certificates/AI Agent Salesforce GFG.webp",
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ This course covers the basics of generative AI using AWS tools:PartyRock, includ
     startDate: "2nd June 2025",
     endDate: "30th July 2025",
     tools: ["Python", "AI", "ML", "GenAI", "LLMs"],
-    image: "/certificates/AWS AIML Scholars Badge.png",
+    image: "/certificates/AWS AIML Scholars Badge.webp",
   },
   {
     id: 3,
@@ -69,7 +69,7 @@ This workshop focuses on creating agentic applications using Google Cloud tools 
       "Vector Search",
       "RAG",
     ],
-    image: "/certificates/Code Vippasana S7.jpeg",
+    image: "/certificates/Code Vippasana S7.webp",
   },
   {
     id: 4,
@@ -82,7 +82,7 @@ This multi-session workshop explores the development of agentic applications usi
     startDate: "12th June 2025",
     endDate: "26th June 2025",
     tools: ["AI", "AI Agents", "ADK", "MCP", "A2A", "Python"],
-    image: "/certificates/Code Vippasana S10.jpeg",
+    image: "/certificates/Code Vippasana S10.webp",
   },
   {
     id: 22,
@@ -95,7 +95,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "11th September 2025",
     endDate: "25th September 2025",
     tools: ["AI", "Gemini CLI", "MCP", "Serverless"],
-    image: "/certificates/Code Vippasana S11.jpeg",
+    image: "/certificates/Code Vippasana S11.webp",
   },
   {
     id: 5,
@@ -106,7 +106,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "14th May 2024",
     endDate: "17th May 2024",
     tools: ["Cyber Security", "Network", "Internet"],
-    image: "/certificates/CyberSuraksha.png",
+    image: "/certificates/CyberSuraksha.webp",
   },
   {
     id: 6,
@@ -116,7 +116,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     experience: `The Marvel theme was a good move, and one of my fav events as I were presented certification of appreciation and excelled at the task by choosing the right tradeoffs. Power BI seemed very easy to use but had a lot of things.`,
     startDate: "22nd March 2024",
     tools: ["Data Analytics", "Excel", "Power BI"],
-    image: "/certificates/Data Analytics_PowerBI.png",
+    image: "/certificates/Data Analytics_PowerBI.webp",
   },
   {
     id: 7,
@@ -127,7 +127,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "23rd February 2024",
     endDate: "24th February 2024",
     tools: ["HTML", "CSS"],
-    image: "/certificates/GDSC Solution Challenge 2024 Hackathon.jpg",
+    image: "/certificates/GDSC Solution Challenge 2024 Hackathon.webp",
   },
   {
     id: 8,
@@ -138,7 +138,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "7th January 2025",
     endDate: "8th January 2025",
     tools: ["Canva", "Excel"],
-    image: "/certificates/IASF_2025.png",
+    image: "/certificates/IASF_2025.webp",
   },
   {
     id: 23,
@@ -149,7 +149,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "3rd July 2025",
     endDate: "23rd July 2025",
     tools: ["AI", "ML", "DL"],
-    image: "/certificates/IBM AI Fundamentals.png",
+    image: "/certificates/IBM AI Fundamentals.webp",
   },
   {
     id: 9,
@@ -161,7 +161,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "25th April 2024",
     endDate: "27th April 2024",
     tools: ["Python", "ML", "DL", "Azure ML Studio", "Research"],
-    image: "/certificates/ICAMADA IEEE 2024.png",
+    image: "/certificates/ICAMADA IEEE 2024.webp",
   },
   {
     id: 10,
@@ -173,7 +173,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "16th January 2025",
     endDate: "18th January 2025",
     tools: ["Python", "ML", "DL", "Research"],
-    image: "/certificates/ICCMA 2025 ML Paper.png",
+    image: "/certificates/ICCMA 2025 ML Paper.webp",
   },
   {
     id: 11,
@@ -185,7 +185,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "8th January 2025",
     endDate: "10th January 2025",
     tools: ["Canva", "Excel"],
-    image: "/certificates/ICTIEE_2025.png",
+    image: "/certificates/ICTIEE_2025.webp",
   },
   {
     id: 12,
@@ -196,7 +196,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "2th June 2024",
     endDate: "29th July 2024",
     tools: ["C++", "Python", "DSA", "CP"],
-    image: "/certificates/IICPC CP 2024.jpg",
+    image: "/certificates/IICPC CP 2024.webp",
   },
   {
     id: 13,
@@ -207,7 +207,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "2th June 2025",
     endDate: "30th July 2025",
     tools: ["Python", "AI", "ML", "DL"],
-    image: "/certificates/Intro GenAI AWS Udacity.png",
+    image: "/certificates/Intro GenAI AWS Udacity.webp",
   },
   {
     id: 14,
@@ -230,7 +230,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
       "Digital Literacy",
       "Professional Development",
     ],
-    image: "/certificates/McKinsey Forward Program.png",
+    image: "/certificates/McKinsey Forward Program.webp",
   },
   {
     id: 15,
@@ -240,7 +240,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     experience: `It was a mid experience but focused on a new topic, that I haven't explored. The workshop was on PM and its responsibilities and day-to-day tasks.`,
     startDate: "10th August 2024",
     tools: ["Product Management", "PRDs", "GTM", "Agile"],
-    image: "/certificates/Product Management Certificate.jpg",
+    image: "/certificates/Product Management Certificate.webp",
   },
   {
     id: 16,
@@ -251,7 +251,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "5th September 2024",
     endDate: "15th September 2024",
     tools: ["C++", "DSA"],
-    image: "/certificates/Scaler's CPP Course.png",
+    image: "/certificates/Scaler's CPP Course.webp",
   },
   {
     id: 17,
@@ -261,7 +261,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     experience: `My favourite one, spent a lot of time and efforts in learning which eventually helped during contests. It laid the foundation in learning my core programming language.`,
     startDate: "12th June 2024",
     tools: ["Python", "DSA"],
-    image: "/certificates/Scaler's Python Basics.png",
+    image: "/certificates/Scaler's Python Basics.webp",
   },
   {
     id: 18,
@@ -273,7 +273,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "8th December 2024",
     endDate: "10th December 2024",
     tools: ["SQL", "DBMS", "Database"],
-    image: "/certificates/Scaler's SQL Course.png",
+    image: "/certificates/Scaler's SQL Course.webp",
   },
   {
     id: 19,
@@ -291,7 +291,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
       "Data Science",
       "ML",
     ],
-    image: "/certificates/Summer Analytics'25.png",
+    image: "/certificates/Summer Analytics'25.webp",
   },
   {
     id: 20,
@@ -302,7 +302,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "14th June 2025",
     endDate: "29th June 2025",
     tools: ["Product Management"],
-    image: "/certificates/Summer of PM 2025.png",
+    image: "/certificates/Summer of PM 2025.webp",
   },
   {
     id: 21,
@@ -313,7 +313,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "25th June 2025",
     endDate: "30th June 2025",
     tools: ["Product Management", "Case Studies"],
-    image: "/certificates/Summer of PM'25 Case Study.png",
+    image: "/certificates/Summer of PM'25 Case Study.webp",
   },
   {
     id: 24,
@@ -324,7 +324,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "12th November 2024",
     endDate: "16th November 2024",
     tools: ["Python", "AI", "LLMs", "Notebook", "Kaggle"],
-    image: "/certificates/Kaggle 5-Day Gen AI Intensive.png",
+    image: "/certificates/Kaggle 5-Day Gen AI Intensive.webp",
   },
   {
     id: 25,
@@ -335,7 +335,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "4th November 2024",
     endDate: "12th August 2025",
     tools: ["JS", "MongoDB", "Database"],
-    image: "/certificates/MongoDB GFG.png",
+    image: "/certificates/MongoDB GFG.webp",
   },
   {
     id: 27,
@@ -346,7 +346,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "3rd August 2025",
     endDate: "5th August 2025",
     tools: ["OCI", "AI"],
-    image: "/certificates/OCI 2025 AI Foundations Associate.png",
+    image: "/certificates/OCI 2025 AI Foundations Associate.webp",
   },
   {
     id: 26,
@@ -358,7 +358,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "19th October 2025",
     endDate: "30th October 2025",
     tools: ["OCI", "AWS", "GCP"],
-    image: "/certificates/OCI 2025 Multi Cloud Architect.png",
+    image: "/certificates/OCI 2025 Multi Cloud Architect.webp",
   },
   {
     id: 28,
@@ -369,7 +369,7 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "19th August 2025",
     endDate: "25th August 2025",
     tools: ["OCI"],
-    image: "/certificates/OCI 2025 Foundations Associate.png",
+    image: "/certificates/OCI 2025 Foundations Associate.webp",
   },
 ];
 
