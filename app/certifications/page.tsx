@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef, useCallback } from "react";
 import { ArrowLeft, ExternalLink, X, Calendar } from "lucide-react";
 
 interface Certificate {
@@ -16,7 +16,7 @@ interface Certificate {
   endDate?: string; // optional end date
   tools?: string[]; // tools/knowledge used
   tags?: string[]; // tags from allowed set
-  image: string;
+  image: string | string[]; // <-- allow single or multiple images
   certificateFile?: string;
   // keep backward-compatible fields if present in existing data:
   issuer?: string;
@@ -340,16 +340,20 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
   {
     id: 27,
     host: "Oracle",
-    title: "Oracle Cloud Infrastructure 2025 AI Foundations Associate (1Z0-1122-25)",
-    description: `The OCI AI Foundations path introduces key concepts in AI, ML, Deep Learning, and Generative AI, focusing on their application within Oracle Cloud. No prior experience is required.`,
+    title:
+      "Oracle Cloud Infrastructure 2025 AI Foundations Associate (1Z0-1122-25)",
+    description: `A foundational knowledge of Artificial Intelligence concepts and their application within Oracle Cloud Infrastructure (OCI). It covers core topics such as AI and Machine Learning fundamentals, Deep Learning, Generative AI, OCI AI services, data concepts, and responsible AI principles. The certification is designed for beginners and non-technical professionals, requiring no prior AI or coding experience, and demonstrates an understanding of how AI workloads are positioned, used, and governed on OCI.`,
     experience: `Just another brush up on AI. Good lessons and visuals. Was a little long than expected`,
     startDate: "3rd August 2025",
     endDate: "5th August 2025",
     tools: ["OCI", "AI"],
-    image: "/certificates/OCI 2025 AI Foundations Associate.webp",
+    image: [
+      "/certificates/OCI 2025 AI Foundations Associate.webp",
+      "/certificates/OCI25-AI-FA.webp",
+    ],
   },
   {
-    id: 26,
+    id: 28,
     host: "Oracle",
     title:
       "Oracle Cloud Infrastructure 2025 Multicloud Architect Professional (1Z0-1151-25)",
@@ -358,18 +362,42 @@ Across multiple hands-on sessions, participants will learn to build and deploy a
     startDate: "19th October 2025",
     endDate: "30th October 2025",
     tools: ["OCI", "AWS", "GCP"],
-    image: "/certificates/OCI 2025 Multi Cloud Architect.webp",
+    image: [
+      "/certificates/OCI 2025 Multi Cloud Architect.webp",
+      "/certificates/OCI25-MCA-P.webp",
+    ],
   },
   {
-    id: 28,
+    id: 29,
     host: "Oracle",
-    title: "Oracle Cloud Infrastructure 2025 Foundations Associate (1Z0-1085-25)",
+    title:
+      "Oracle Cloud Infrastructure 2025 Foundations Associate (1Z0-1085-25)",
     description: `A foundational learning path covering OCI architecture, identity and access management, networking, compute, storage, database, security, and cost management. Learners gain hands-on experience in deploying and managing OCI services while understanding best practices for scalability and security. Basic cloud computing knowledge is recommended. The course also prepares participants for the Oracle Cloud Infrastructure 2025 Foundations Associate certification.`,
     experience: `Just another brush up on AI. Good lessons and visuals. Was a little long than expected`,
     startDate: "19th August 2025",
     endDate: "25th August 2025",
     tools: ["OCI"],
-    image: "/certificates/OCI 2025 Foundations Associate.webp",
+    image: [
+      "/certificates/OCI 2025 Foundations Associate.webp",
+      "/certificates/OCI25-OCI-FA.webp",
+    ],
+  },
+  {
+    id: 30,
+    host: "Free Software Wing, GRIET",
+    title: "Vivitsu 2025 National-Level 24-Hour Hackathon",
+    description: `Vivitsu 2025 is the 3rd edition of a national-level 24-hour offline hackathon organized by the Free Software Wing at Gokaraju Rangaraju Institute of Engineering and Technology (GRIET), Hyderabad. Open to undergraduate, postgraduate, engineering, and MBA students, the hackathon allows teams of 2–4 members to design and build innovative solutions across domains such as Healthcare, Smart Education, Legal & Civic Governance, Heritage & Cultural Preservation, and Open Innovation.
+
+The event consists of two evaluation rounds — idea presentation and working prototype demonstration, with additional weightage for projects using open-source software. Participants receive meals, certificates, goodies, and a gaming card, with winners selected based on creativity, technical depth, and real-world impact.`,
+    experience: `Won my very first hackathon and it was really exciting to see people brainstorming and working all night. A really good experience. First time attending a hackathon outside college and secured 2nd place in Legal & Civic Governance Domain—even the judges were quite impressed with the application.`,
+    startDate: "9th April 2025",
+    endDate: "10th April 2025",
+    tools: ["Hackathons", "Open Source"],
+    image: [
+      "/certificates/Vivitsu'25 Participation.webp",
+      "/certificates/Vivitsu'25 RunnerUp.webp",
+      "/certificates/VIVITSU_GRIET_Hackathon.webp",
+    ],
   },
 ];
 
@@ -622,6 +650,67 @@ export default function Certifications() {
     return sorted;
   }, [query, selectedTags, sortOption]);
 
+  // Slideshow state: track current image index for each certificate by id
+  const [slideIndexes, setSlideIndexes] = useState<Record<number, number>>({});
+  // Track which certificate image is in viewport
+  const [inViewIds, setInViewIds] = useState<Record<number, boolean>>({});
+
+  // Helper to go to next/prev image in slideshow
+  const handleSlide = (certId: number, images: string[], dir: 1 | -1) => {
+    setSlideIndexes((prev) => {
+      const curr = prev[certId] ?? 0;
+      const next = (curr + dir + images.length) % images.length;
+      return { ...prev, [certId]: next };
+    });
+  };
+
+  // Intersection observer hook for each certificate image area
+  const imageRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
+  useEffect(() => {
+    const observers: Record<number, IntersectionObserver> = {};
+    Object.entries(imageRefs.current).forEach(([certIdStr, el]) => {
+      const certId = Number(certIdStr);
+      if (!el) return;
+      observers[certId]?.disconnect();
+      observers[certId] = new window.IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            setInViewIds((prev) => ({
+              ...prev,
+              [certId]: entry.isIntersecting,
+            }));
+          });
+        },
+        { threshold: 0.3 }
+      );
+      observers[certId].observe(el);
+    });
+    return () => {
+      Object.values(observers).forEach((obs) => obs.disconnect());
+    };
+  }, [filtered.length]);
+
+  // Automatic slideshow effect for all in-view certificates with multiple images
+  useEffect(() => {
+    const timers: Record<number, NodeJS.Timeout> = {};
+    filtered.forEach((cert) => {
+      const images = Array.isArray(cert.image) ? cert.image : [cert.image];
+      if (images.length > 1 && inViewIds[cert.id]) {
+        timers[cert.id] = setInterval(() => {
+          setSlideIndexes((prev) => {
+            const curr = prev[cert.id] ?? 0;
+            const next = (curr + 1) % images.length;
+            return { ...prev, [cert.id]: next };
+          });
+        }, 2500);
+      }
+    });
+    return () => {
+      Object.values(timers).forEach(clearInterval);
+    };
+  }, [filtered, inViewIds]);
+
   return (
     <div className="container mx-auto px-4 py-12">
       <motion.div
@@ -713,104 +802,216 @@ export default function Certifications() {
         </div>
 
         <div className="space-y-6">
-          {filtered.map((cert, index) => (
-            <motion.div
-              key={cert.id}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: index * 0.04 }}
-              className="bg-surface-light dark:bg-surface-dark rounded-lg shadow overflow-hidden"
-            >
-              <div className="md:flex">
-                {/* Image: show entire image (object-contain) */}
-                <div className="md:w-1/3 w-full bg-black/5 dark:bg-white/5 flex items-center justify-center p-4">
-                  <div className="w-full">
-                    <Image
-                      src={encodeURI(cert.image || "/placeholder.svg")}
-                      alt={cert.title}
-                      width={1200}
-                      height={800}
-                      className="w-full h-auto object-contain rounded-md"
-                    />
-                  </div>
-                </div>
-
-                <div className="md:w-2/3 p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="text-xs uppercase tracking-wide text-primary-light dark:text-primary-dark font-semibold">
-                        {cert.host || cert.issuer}
-                      </div>
-                      <h2 className="text-lg md:text-xl font-bold text-text-light dark:text-text-dark">
-                        {cert.title}
-                      </h2>
-                      <div className="mt-1">
-                        <div className="flex items-center text-sm text-text-light/80 dark:text-text-dark/80">
-                          <Calendar className="w-4 h-4 mr-2 text-primary-light dark:text-primary-dark" />
-                          {formatDateRange(
-                            cert.startDate,
-                            cert.endDate,
-                            cert.date
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-2">
-                      {cert.certificateFile && (
-                        <a
-                          href={cert.certificateFile}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-3 py-2 bg-primary-light dark:bg-primary-dark text-white rounded-full text-sm"
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          View
-                        </a>
+          {filtered.map((cert, index) => {
+            // Normalize images to array
+            const images = Array.isArray(cert.image)
+              ? cert.image
+              : [cert.image];
+            const hasMultiple = images.length > 1;
+            const currIdx = slideIndexes[cert.id] ?? 0;
+            return (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: index * 0.04 }}
+                className="bg-surface-light dark:bg-surface-dark rounded-lg shadow overflow-hidden"
+              >
+                <div className="md:flex">
+                  {/* Image/Slideshow */}
+                  <div
+                    className="md:w-1/3 w-full bg-black/5 dark:bg-white/5 flex items-center justify-center p-4"
+                    ref={(el) => {
+                      imageRefs.current[cert.id] = el;
+                    }}
+                  >
+                    {/* Fixed aspect ratio and min-height wrapper */}
+                    <div
+                      className="w-full relative"
+                      style={{
+                        aspectRatio: "3/2", // or "4/3" if preferred
+                        minHeight: 400, // px, adjust as needed for your largest image
+                        maxHeight: 500, // optional, to avoid excessive height
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "transparent",
+                      }}
+                    >
+                      {/* Slideshow for multiple images */}
+                      {hasMultiple ? (
+                        <>
+                          <Image
+                            src={encodeURI(
+                              images[currIdx] || "/placeholder.svg"
+                            )}
+                            alt={cert.title}
+                            width={1200}
+                            height={800}
+                            className="w-full h-full object-contain rounded-md"
+                            style={{
+                              position: "absolute",
+                              inset: 0,
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "contain",
+                            }}
+                          />
+                          {/* Navigation arrows */}
+                          <button
+                            aria-label="Previous image"
+                            onClick={() => handleSlide(cert.id, images, -1)}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-black/60 border border-slate-300 dark:border-slate-700 shadow-lg hover:bg-primary-light/80 hover:text-white dark:hover:bg-primary-dark/80 transition"
+                            style={{ zIndex: 2 }}
+                          >
+                            {/* Left Chevron SVG */}
+                            <svg
+                              width="22"
+                              height="22"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <polyline points="15 18 9 12 15 6" />
+                            </svg>
+                          </button>
+                          <button
+                            aria-label="Next image"
+                            onClick={() => handleSlide(cert.id, images, 1)}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-9 h-9 rounded-full bg-white/80 dark:bg-black/60 border border-slate-300 dark:border-slate-700 shadow-lg hover:bg-primary-light/80 hover:text-white dark:hover:bg-primary-dark/80 transition"
+                            style={{ zIndex: 2 }}
+                          >
+                            {/* Right Chevron SVG */}
+                            <svg
+                              width="22"
+                              height="22"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <polyline points="9 6 15 12 9 18" />
+                            </svg>
+                          </button>
+                          {/* Dots indicator */}
+                          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                            {images.map((_, i) => (
+                              <span
+                                key={i}
+                                className={`inline-block w-2 h-2 rounded-full ${
+                                  i === currIdx
+                                    ? "bg-primary-light dark:bg-primary-dark"
+                                    : "bg-white/60 dark:bg-black/40"
+                                }`}
+                              />
+                            ))}
+                          </div>
+                        </>
+                      ) : (
+                        // Single image
+                        <Image
+                          src={encodeURI(images[0] || "/placeholder.svg")}
+                          alt={cert.title}
+                          width={1200}
+                          height={800}
+                          className="w-full h-full object-contain rounded-md"
+                          style={{
+                            position: "absolute",
+                            inset: 0,
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                          }}
+                        />
                       )}
                     </div>
                   </div>
 
-                  <p className="mt-4 text-sm text-text-light/90 dark:text-text-dark/90 text-justify">
-                    {cert.description}
-                  </p>
-
-                  {cert.experience && (
-                    <div className="mt-3">
-                      <div className="font-semibold text-sm mb-1">
-                        Experience
+                  <div className="md:w-2/3 p-5">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="text-xs uppercase tracking-wide text-primary-light dark:text-primary-dark font-semibold">
+                          {cert.host || cert.issuer}
+                        </div>
+                        <h2 className="text-lg md:text-xl font-bold text-text-light dark:text-text-dark">
+                          {cert.title}
+                        </h2>
+                        <div className="mt-1">
+                          <div className="flex items-center text-sm text-text-light/80 dark:text-text-dark/80">
+                            <Calendar className="w-4 h-4 mr-2 text-primary-light dark:text-primary-dark" />
+                            {formatDateRange(
+                              cert.startDate,
+                              cert.endDate,
+                              cert.date
+                            )}
+                          </div>
+                        </div>
                       </div>
-                      <p className="text-sm text-text-light/90 dark:text-text-dark/90 text-justify">
-                        {cert.experience}
-                      </p>
-                    </div>
-                  )}
 
-                  {/* Show combined unique tools + tags once as Skills & Tools */}
-                  {((cert.tools && cert.tools.length > 0) ||
-                    (cert.tags && cert.tags.length > 0)) && (
-                    <div className="mt-4">
-                      <div className="font-semibold text-sm mb-2">
-                        Skills & Tools
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {Array.from(
-                          new Set([...(cert.tools || []), ...(cert.tags || [])])
-                        ).map((t) => (
-                          <span
-                            key={t}
-                            className="text-xs px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200"
+                      <div className="flex gap-2">
+                        {cert.certificateFile && (
+                          <a
+                            href={cert.certificateFile}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-3 py-2 bg-primary-light dark:bg-primary-dark text-white rounded-full text-sm"
                           >
-                            {t}
-                          </span>
-                        ))}
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            View
+                          </a>
+                        )}
                       </div>
                     </div>
-                  )}
+
+                    <p className="mt-4 text-sm text-text-light/90 dark:text-text-dark/90 text-justify">
+                      {cert.description}
+                    </p>
+
+                    {cert.experience && (
+                      <div className="mt-3">
+                        <div className="font-semibold text-sm mb-1">
+                          Experience
+                        </div>
+                        <p className="text-sm text-text-light/90 dark:text-text-dark/90 text-justify">
+                          {cert.experience}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Show combined unique tools + tags once as Skills & Tools */}
+                    {((cert.tools && cert.tools.length > 0) ||
+                      (cert.tags && cert.tags.length > 0)) && (
+                      <div className="mt-4">
+                        <div className="font-semibold text-sm mb-2">
+                          Skills & Tools
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {Array.from(
+                            new Set([
+                              ...(cert.tools || []),
+                              ...(cert.tags || []),
+                            ])
+                          ).map((t) => (
+                            <span
+                              key={t}
+                              className="text-xs px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
         <div className="mt-8 text-center">

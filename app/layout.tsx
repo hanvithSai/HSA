@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import "./globals.css";
 
+
 export default function RootLayout({
   children,
 }: {
