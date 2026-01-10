@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState, useRef, useCallback } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import { ArrowLeft, ExternalLink, X, Calendar } from "lucide-react";
 import { certificates, Certificate } from "./data";
 
@@ -77,7 +77,7 @@ export default function Certifications() {
       return isNaN(d.getTime()) ? null : d;
     }
     // remove ordinal suffixes: 1st, 2nd, 3rd, 4th ...
-    let s = sRaw.replace(/\b(\d{1,2})(st|nd|rd|th)\b/gi, "$1").trim();
+    const s = sRaw.replace(/\b(\d{1,2})(st|nd|rd|th)\b/gi, "$1").trim();
     // try patterns like "2 June 2025" -> Date("June 2 2025")
     const dmY = s.match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);
     if (dmY) {
@@ -203,11 +203,6 @@ export default function Certifications() {
     return "Date not specified";
   };
 
-  const isImageFile = (filePath?: string) => {
-    if (!filePath) return false;
-    const extension = filePath.split(".").pop()?.toLowerCase() || "";
-    return ["jpg", "jpeg", "png", "gif", "webp", "svg"].includes(extension);
-  };
 
   // filtered list based on search query, selected tags and optional sorting
   const filtered = useMemo(() => {
