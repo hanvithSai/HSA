@@ -1,5 +1,6 @@
 import Hero from "./components/Hero"
 import About from "./components/About"
+import Heatmap from "./components/Heatmap"
 import Education from "./components/Education"
 import Experience from "./components/Experience"
 import Research from "./components/Research"
@@ -15,6 +16,7 @@ export default function Home() {
     <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
       <Hero />
       <About />
+      <Heatmap />
       <Education />
       <Experience />
       <Research />
